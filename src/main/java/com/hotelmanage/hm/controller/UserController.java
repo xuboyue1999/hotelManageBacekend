@@ -23,7 +23,7 @@ public class UserController {
     @RequestMapping("hello")
     public Object test1(){
         Map<String,Object> map = new HashMap<String, Object>();
-        map.put("list","测试");
+        map.put("list","测试0129");
         return map;
     }
 
