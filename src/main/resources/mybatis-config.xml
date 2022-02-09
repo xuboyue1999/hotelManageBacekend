@@ -23,7 +23,7 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://47.101.140.0:3306/hotel?serverTimezone=CTT&amp;characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://localhost:3306/hotel?serverTimezone=CTT&amp;characterEncoding=UTF-8"
                         userId="root" password="123456">
         </jdbcConnection>
         <javaTypeResolver>
