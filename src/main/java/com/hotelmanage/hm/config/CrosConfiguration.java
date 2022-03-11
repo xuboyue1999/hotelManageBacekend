@@ -1,0 +1,38 @@
+package com.hotelmanage.hm.config;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebFilter("/*")
+public class CrosConfiguration implements Filter {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+
+        System.out.println("跨域过滤器执行....");
+
+        HttpServletRequest req = (HttpServletRequest)request;
+        HttpServletResponse res = (HttpServletResponse)response;
+
+        res.setContentType("application/json;charset=utf-8");
+
+        res.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+        res.setHeader("Access-Control-Allow-Credentials", "true");
+        res.setHeader("Access-Control-Allow-Headers",
+                "Accept,"
+                        + "Origin,"
+                        + "No-Cache,"
+                        + "X-Requested-With,"
+                        + "If-Modified-Since,"
+                        + "Pragma,"
+                        + "Last-Modified,"
+                        + "Cache-Control,"
+                        + "Expires,"
+                        + "Content-Type,"
+                        + "X-E4M-With");
+
+
+        chain.doFilter(request, response);
+    }
+}
