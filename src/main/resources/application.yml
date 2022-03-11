@@ -11,3 +11,5 @@ mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   checkConfigLocation: true
   type-aliases-package: com.hotelmanage.hm.po
+
+storage-dir: upload
